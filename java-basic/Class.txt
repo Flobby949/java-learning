@@ -1,0 +1,2 @@
+className=top.flobby.java.basic.reflection.entity.Person
+methodName=getPerson
