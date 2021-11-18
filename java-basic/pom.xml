@@ -11,6 +11,7 @@
     <modules>
         <module>reflection</module>
         <module>ioex</module>
+        <module>lambdaex</module>
     </modules>
 
     <properties>
