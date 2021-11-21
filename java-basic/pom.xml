@@ -12,6 +12,7 @@
         <module>reflection</module>
         <module>ioex</module>
         <module>lambdaex</module>
+        <module>basic</module>
     </modules>
 
     <properties>
