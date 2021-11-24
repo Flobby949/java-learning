@@ -13,6 +13,7 @@
         <module>ioex</module>
         <module>lambdaex</module>
         <module>basic</module>
+        <module>threadex</module>
     </modules>
 
     <properties>
