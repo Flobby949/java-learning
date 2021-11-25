@@ -1,12 +1,12 @@
-package top.flobby.basic.learning;
+package top.flobby.java.basic.ioex;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * @author : Flobby
  * @program : java-basic
- * @description : 字节流读操作
+ * @description : 字节流/字符流 读操作
  * @create : 2021-11-22 11:54
  **/
 
@@ -18,6 +18,8 @@ public class InputStreamTest {
         readByChar(true);
         System.out.println("\n====================");
         readByCharArray();
+        System.out.println("\n====================");
+        readerTest(new File(FILE_PATH));
     }
 
     /**
@@ -75,6 +77,32 @@ public class InputStreamTest {
             if (fis != null) {
                 try {
                     fis.close();
+                } catch (IOException e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }
+    }
+
+    /**
+     * 字符流读取中文文档，解决字节流读取中文乱码问题
+     *
+     * @param file 中文文件
+     */
+    private static void readerTest(File file) {
+        Reader fr = null;
+        try {
+            fr = new FileReader(file);
+            int read;
+            while ((read = fr.read()) != -1) {
+                System.out.print((char) read);
+            }
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            if (fr != null) {
+                try {
+                    fr.close();
                 } catch (IOException e) {
                     System.err.println(e.getMessage());
                 }
